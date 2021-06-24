@@ -45601,25 +45601,24 @@ representation of GIMPLE that is emitted in special sections of '.o'
 files.  Currently, LTO support is enabled in most ELF-based systems, as
 well as darwin, cygwin and mingw systems.
 
- Since GIMPLE bytecode is saved alongside final object code, object
-files generated with LTO support are larger than regular object files.
-This "fat" object format makes it easy to integrate LTO into existing
-build systems, as one can, for instance, produce archives of the files.
-Additionally, one might be able to ship one set of fat objects which
-could be used both for development and the production of optimized
-builds.  A, perhaps surprising, side effect of this feature is that any
-mistake in the toolchain leads to LTO information not being used (e.g.
-an older 'libtool' calling 'ld' directly).  This is both an advantage,
-as the system is more robust, and a disadvantage, as the user is not
-informed that the optimization has been disabled.
+ By default, object files generated with LTO support contain only GIMPLE
+bytecode.  Such objects are called "slim", and they require that tools
+like 'ar' and 'nm' understand symbol tables of LTO sections.  For most
+targets these tools have been extended to use the plugin infrastructure,
+so GCC can support "slim" objects consisting of the intermediate code
+alone.
 
- The current implementation only produces "fat" objects, effectively
-doubling compilation time and increasing file sizes up to 5x the
-original size.  This hides the problem that some tools, such as 'ar' and
-'nm', need to understand symbol tables of LTO sections.  These tools
-were extended to use the plugin infrastructure, and with these problems
-solved, GCC will also support "slim" objects consisting of the
-intermediate code alone.
+ GIMPLE bytecode could also be saved alongside final object code if the
+'-ffat-lto-objects' option is passed, or if no plugin support is
+detected for 'ar' and 'nm' when GCC is configured.  It makes the object
+files generated with LTO support larger than regular object files.  This
+"fat" object format allows to ship one set of fat objects which could be
+used both for development and the production of optimized builds.  A,
+perhaps surprising, side effect of this feature is that any mistake in
+the toolchain leads to LTO information not being used (e.g. an older
+'libtool' calling 'ld' directly).  This is both an advantage, as the
+system is more robust, and a disadvantage, as the user is not informed
+that the optimization has been disabled.
 
  At the highest level, LTO splits the compiler in two.  The first half
 (the "writer") produces a streaming representation of all the internal
@@ -58230,27 +58229,27 @@ Node: Plugins tracking1982455
 Node: Plugins building1983043
 Node: LTO1986544
 Node: LTO Overview1987416
-Node: LTO object file layout1993243
-Node: IPA1997873
-Node: WHOPR2006923
-Node: Internal flags2011483
-Node: Match and Simplify2012894
-Node: GIMPLE API2013856
-Node: The Language2016651
-Node: Static Analyzer2029150
-Node: Analyzer Internals2029415
-Node: Debugging the Analyzer2045302
-Node: User Experience Guidelines2047912
-Node: Guidelines for Diagnostics2048848
-Ref: input_location_example2057023
-Node: Guidelines for Options2066708
-Node: Funding2066885
-Node: GNU Project2069392
-Node: Copying2070041
-Node: GNU Free Documentation License2107552
-Node: Contributors2132673
-Node: Option Index2173649
-Node: Concept Index2174526
+Node: LTO object file layout1993168
+Node: IPA1997798
+Node: WHOPR2006848
+Node: Internal flags2011408
+Node: Match and Simplify2012819
+Node: GIMPLE API2013781
+Node: The Language2016576
+Node: Static Analyzer2029075
+Node: Analyzer Internals2029340
+Node: Debugging the Analyzer2045227
+Node: User Experience Guidelines2047837
+Node: Guidelines for Diagnostics2048773
+Ref: input_location_example2056948
+Node: Guidelines for Options2066633
+Node: Funding2066810
+Node: GNU Project2069317
+Node: Copying2069966
+Node: GNU Free Documentation License2107477
+Node: Contributors2132598
+Node: Option Index2173574
+Node: Concept Index2174451
 
 End Tag Table
 
