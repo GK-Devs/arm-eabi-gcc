@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20210629 (experimental)")
+(!version  "12.0.0 20210630 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 226
@@ -22974,15 +22974,15 @@
    (!type already_seen 1382)
   )
   gc_pointed_to "vec<ctf_dtdef_ref,va_gc>"
-  (!srcfileloc  "btfout.c" 104)
+  (!srcfileloc  "btfout.c" 105)
   (!fields 2 
    (!pair  "va_gc"
     (!type already_seen 79)
-    (!srcfileloc  "btfout.c" 104)
+    (!srcfileloc  "btfout.c" 105)
     nil )
    (!pair  "ctf_dtdef_ref"
     (!type already_seen 1364)
-    (!srcfileloc  "btfout.c" 104)
+    (!srcfileloc  "btfout.c" 105)
     nil )
   )
  )
@@ -31999,19 +31999,19 @@
   nil )
  (!pair  "vec<ctf_dtdef_ref,va_gc>"
   (!type already_seen 1382)
-  (!srcfileloc  "btfout.c" 104)
+  (!srcfileloc  "btfout.c" 105)
   nil )
  (!pair  "btf_datasec_t"
   (!type already_seen 1381)
-  (!srcfileloc  "btfout.c" 85)
+  (!srcfileloc  "btfout.c" 86)
   nil )
  (!pair  "ctf_dvd_preprocess_arg_t"
   (!type already_seen 1380)
-  (!srcfileloc  "ctfout.c" 71)
+  (!srcfileloc  "ctfout.c" 72)
   nil )
  (!pair  "ctf_dtd_preprocess_arg_t"
   (!type already_seen 1379)
-  (!srcfileloc  "ctfout.c" 65)
+  (!srcfileloc  "ctfout.c" 66)
   nil )
  (!pair  "ctf_container_ref"
   (!type already_seen 1378)
@@ -36477,15 +36477,15 @@
   nil )
  (!pair  "funcs"
   (!type already_seen 1383)
-  (!srcfileloc  "btfout.c" 104)
+  (!srcfileloc  "btfout.c" 105)
   nil )
  (!pair  "btf_info_section"
   (!type already_seen 211)
-  (!srcfileloc  "btfout.c" 41)
+  (!srcfileloc  "btfout.c" 42)
   nil )
  (!pair  "ctf_info_section"
   (!type already_seen 211)
-  (!srcfileloc  "ctfout.c" 35)
+  (!srcfileloc  "ctfout.c" 36)
   nil )
  (!pair  "tu_ctfc"
   (!type already_seen 1378)
