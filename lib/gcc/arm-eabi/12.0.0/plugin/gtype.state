@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20210712 (experimental)")
+(!version  "12.0.0 20210713 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 226
@@ -25984,7 +25984,7 @@
   )
  )
  
- (!type struct 1825 nil  gc_unused "anonymous:../../gcc/gcc/ada/gcc-interface/decl.c:257"nil 
+ (!type struct 1825 nil  gc_unused "anonymous:../../gcc/gcc/ada/gcc-interface/decl.c:258"nil 
   (!fields 0 )
   nil 0 nil nil )
  
@@ -31151,11 +31151,11 @@
   nil )
  (!pair  "vinfo_t"
   (!type already_seen 1827)
-  (!srcfileloc  "ada/gcc-interface/decl.c" 7661)
+  (!srcfileloc  "ada/gcc-interface/decl.c" 7727)
   nil )
  (!pair  "intrin_binding_t"
   (!type already_seen 1825)
-  (!srcfileloc  "ada/gcc-interface/decl.c" 261)
+  (!srcfileloc  "ada/gcc-interface/decl.c" 262)
   nil )
  (!pair  "dummy_type_hasher"
   (!type already_seen 1822)

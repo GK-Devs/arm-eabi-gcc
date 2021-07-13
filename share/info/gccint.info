@@ -20740,7 +20740,7 @@ structure and several methods are available to operate on them:
      This function returns the 'edge' currently pointed to by an
      'edge_iterator'.
 
-'ei_safe_safe'
+'ei_safe_edge'
      This function returns the 'edge' currently pointed to by an
      'edge_iterator', but returns 'NULL' if the iterator is pointing at
      the end of the sequence.  This function has been provided for
@@ -54415,7 +54415,7 @@ Concept Index
 * ei_next:                               Edges.              (line   35)
 * ei_one_before_end_p:                   Edges.              (line   31)
 * ei_prev:                               Edges.              (line   39)
-* ei_safe_safe:                          Edges.              (line   47)
+* ei_safe_edge:                          Edges.              (line   47)
 * ei_start:                              Edges.              (line   19)
 * ELIMINABLE_REGS:                       Elimination.        (line   34)
 * ELSE_CLAUSE:                           Statements for C and C++.
