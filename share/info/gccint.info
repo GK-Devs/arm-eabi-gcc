@@ -47023,6 +47023,13 @@ program point:
         __analyzer_dump_region_model ();
  will dump the region_model's state to stderr.
 
+     __analyzer_dump_state ("malloc", ptr);
+
+ will emit a warning describing the state of the 2nd argument (which can
+be of any type) with respect to the state machine with a name matching
+the 1st argument (which must be a string literal).  This is for use when
+debugging, and may be of use in DejaGnu tests.
+
      __analyzer_eval (expr);
  will emit a warning with text "TRUE", FALSE" or "UNKNOWN" based on the
 truthfulness of the argument.  This is useful for writing DejaGnu tests.
@@ -58310,17 +58317,17 @@ Node: The Language2019316
 Node: Static Analyzer2031815
 Node: Analyzer Internals2032080
 Node: Debugging the Analyzer2047967
-Node: User Experience Guidelines2050577
-Node: Guidelines for Diagnostics2051513
-Ref: input_location_example2059688
-Node: Guidelines for Options2069373
-Node: Funding2069550
-Node: GNU Project2072057
-Node: Copying2072706
-Node: GNU Free Documentation License2110217
-Node: Contributors2135338
-Node: Option Index2176314
-Node: Concept Index2177191
+Node: User Experience Guidelines2050887
+Node: Guidelines for Diagnostics2051823
+Ref: input_location_example2059998
+Node: Guidelines for Options2069683
+Node: Funding2069860
+Node: GNU Project2072367
+Node: Copying2073016
+Node: GNU Free Documentation License2110527
+Node: Contributors2135648
+Node: Option Index2176624
+Node: Concept Index2177501
 
 End Tag Table
 
