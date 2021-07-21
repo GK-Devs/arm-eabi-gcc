@@ -4,7 +4,7 @@
 ;;; Don't parse this file wihout knowing GCC gengtype internals.
 ;;; This file should be parsed by the same gengtype which wrote it.
 
-(!version  "12.0.0 20210720 (experimental)")
+(!version  "12.0.0 20210721 (experimental)")
 (!srcdir  "../../gcc/gcc")
 (!languages 10 ada c cp d fortran go jit lto objc objcp)
 (!fileslist 226 0
@@ -9743,15 +9743,19 @@
                                                     (!type struct 497 
                                                      (!type already_seen 496)
                                                      gc_pointed_to "dwarf_file_data"
-                                                     (!srcfileloc  "dwarf2out.h" 429)
-                                                     (!fields 2 
-                                                      (!pair  "filename"
+                                                     (!srcfileloc  "dwarf2out.h" 430)
+                                                     (!fields 3 
+                                                      (!pair  "key"
                                                        (!type already_seen 11)
                                                        (!srcfileloc  "dwarf2out.h" 427)
                                                        nil )
+                                                      (!pair  "filename"
+                                                       (!type already_seen 11)
+                                                       (!srcfileloc  "dwarf2out.h" 428)
+                                                       nil )
                                                       (!pair  "emitted_number"
                                                        (!type already_seen 2)
-                                                       (!srcfileloc  "dwarf2out.h" 428)
+                                                       (!srcfileloc  "dwarf2out.h" 429)
                                                        nil )
                                                      )
                                                      (!options 
@@ -36391,7 +36395,7 @@
   nil )
  (!pair  "next_block_index"
   (!type already_seen 2)
-  (!srcfileloc  "function.c" 4612)
+  (!srcfileloc  "function.c" 4620)
   nil )
  (!pair  "temp_slot_address_table"
   (!type already_seen 1434)

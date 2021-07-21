@@ -45,11 +45,8 @@ Individual utilities
 * windres: (binutils)windres.                   Manipulate Windows resources.
 
 Software development
-* As: (as).                     The GNU assembler.
-* Bfd: (bfd).                   The Binary File Descriptor library.
 * Binutils: (binutils).         The GNU binary utilities.
 * Cpp: (cpp).                   The GNU C preprocessor.
-* Gas: (as).                    The GNU assembler.
 * Ld: (ld).                     The GNU linker.
 * g++: (gcc).                   The GNU C++ compiler.
 * gcc: (gcc).                   The GNU Compiler Collection.
@@ -61,4 +58,3 @@ Software development
                                   processing program.
 * gprof: (gprof).               Profiling your program's execution
 * lto-dump: (gcc) lto-dump.     'lto-dump'--Tool for dumping LTO object files.
-ram's execution
