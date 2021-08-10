@@ -38108,6 +38108,16 @@ This is about addressing modes.
      You can also adjust private variables at OpenACC device-lowering
      time using the 'TARGET_GOACC_ADJUST_PRIVATE_DECL' target hook.
 
+ -- Target Hook: tree TARGET_GOACC_CREATE_WORKER_BROADCAST_RECORD (tree
+          REC, bool SENDER, const char *NAME)
+     Create a record used to propagate local-variable state from an
+     active worker to other workers.  A possible implementation might
+     adjust the type of REC to place the new variable in shared GPU
+     memory.
+
+     Presence of this target hook indicates that middle end
+     neutering/broadcasting be used.
+
 
 File: gccint.info,  Node: Anchored Addresses,  Next: Condition Code,  Prev: Addressing Modes,  Up: Target Macros
 
@@ -45075,10 +45085,8 @@ three things you need to do:
      you just changed.  The file will be called 'gt-PATH.h' where PATH
      is the pathname relative to the 'gcc' directory with slashes
      replaced by -, so for example the header file to be included in
-     'cp/parser.c' is called 'gt-cp-parser.c'.  The generated header
+     'cp/parser.c' is called 'gt-cp-parser.h'.  The generated header
      file should be included after everything else in the source file.
-     Don't forget to mention this file as a dependency in the
-     'Makefile'!
 
  For language frontends, there is another file that needs to be included
 somewhere.  It will be called 'gtype-LANG.h', where LANG is the name of
@@ -57058,6 +57066,8 @@ Concept Index
 * TARGET_GIMPLE_FOLD_BUILTIN:            Misc.               (line  699)
 * TARGET_GIMPLIFY_VA_ARG_EXPR:           Register Arguments. (line  307)
 * TARGET_GOACC_ADJUST_PRIVATE_DECL:      Addressing Modes.   (line  591)
+* TARGET_GOACC_CREATE_WORKER_BROADCAST_RECORD: Addressing Modes.
+                                                             (line  618)
 * TARGET_GOACC_DIM_LIMIT:                Addressing Modes.   (line  552)
 * TARGET_GOACC_EXPAND_VAR_DECL:          Addressing Modes.   (line  605)
 * TARGET_GOACC_FORK_JOIN:                Addressing Modes.   (line  556)
@@ -58292,97 +58302,97 @@ Node: Varargs1573455
 Node: Trampolines1582855
 Node: Library Calls1592548
 Node: Addressing Modes1597634
-Node: Anchored Addresses1628623
-Node: Condition Code1631266
-Node: MODE_CC Condition Codes1633111
-Node: Costs1639874
-Node: Scheduling1662194
-Node: Sections1686116
-Node: PIC1702481
-Node: Assembler Format1704540
-Node: File Framework1705678
-Ref: TARGET_HAVE_SWITCHABLE_BSS_SECTIONS1713277
-Node: Data Output1714952
-Node: Uninitialized Data1723240
-Node: Label Output1728254
-Node: Initialization1752865
-Node: Macros for Initialization1758826
-Node: Instruction Output1765545
-Node: Dispatch Tables1776174
-Node: Exception Region Output1781925
-Node: Alignment Output1789007
-Node: Debugging Info1792694
-Node: All Debuggers1793452
-Node: DBX Options1796224
-Node: DBX Hooks1801662
-Node: File Names and DBX1802971
-Node: DWARF1805075
-Node: VMS Debug1810890
-Node: CTF Debug1811487
-Node: BTF Debug1811848
-Node: Floating Point1812191
-Node: Mode Switching1814946
-Node: Target Attributes1819383
-Node: Emulated TLS1828859
-Node: MIPS Coprocessors1832249
-Node: PCH Target1833408
-Node: C++ ABI1835250
-Node: D Language and ABI1840042
-Node: Named Address Spaces1842985
-Node: Misc1848912
-Ref: TARGET_SHIFT_TRUNCATION_MASK1856783
-Node: Host Config1916697
-Node: Host Common1917766
-Node: Filesystem1920140
-Node: Host Misc1924255
-Node: Fragments1926704
-Node: Target Fragment1927899
-Node: Host Fragment1938711
-Node: Collect21938951
-Node: Header Dirs1941587
-Node: Type Information1943010
-Node: GTY Options1946286
-Node: Inheritance and GTY1957545
-Ref: Inheritance and GTY-Footnote-11959110
-Node: User GC1959380
-Node: GGC Roots1963119
-Node: Files1963832
-Node: Invoking the garbage collector1966539
-Node: Troubleshooting1968044
-Node: Plugins1969119
-Node: Plugins loading1970248
-Node: Plugin API1971347
-Node: Plugins pass1979214
-Node: Plugins GC1981185
-Node: Plugins description1982902
-Node: Plugins attr1983438
-Node: Plugins recording1985718
-Node: Plugins gate1986568
-Node: Plugins tracking1987159
-Node: Plugins building1987747
-Node: LTO1991248
-Node: LTO Overview1992120
-Node: LTO object file layout1997872
-Node: IPA2002502
-Node: WHOPR2011552
-Node: Internal flags2016112
-Node: Match and Simplify2017523
-Node: GIMPLE API2018485
-Node: The Language2021280
-Node: Static Analyzer2033779
-Node: Analyzer Internals2034044
-Node: Debugging the Analyzer2049931
-Node: User Experience Guidelines2052851
-Node: Guidelines for Diagnostics2053787
-Ref: input_location_example2061962
-Node: Guidelines for Options2071647
-Node: Funding2071824
-Node: GNU Project2074331
-Node: Copying2074980
-Node: GNU Free Documentation License2112491
-Node: Contributors2137612
-Node: Option Index2178588
-Node: Concept Index2179465
+Node: Anchored Addresses1629059
+Node: Condition Code1631702
+Node: MODE_CC Condition Codes1633547
+Node: Costs1640310
+Node: Scheduling1662630
+Node: Sections1686552
+Node: PIC1702917
+Node: Assembler Format1704976
+Node: File Framework1706114
+Ref: TARGET_HAVE_SWITCHABLE_BSS_SECTIONS1713713
+Node: Data Output1715388
+Node: Uninitialized Data1723676
+Node: Label Output1728690
+Node: Initialization1753301
+Node: Macros for Initialization1759262
+Node: Instruction Output1765981
+Node: Dispatch Tables1776610
+Node: Exception Region Output1782361
+Node: Alignment Output1789443
+Node: Debugging Info1793130
+Node: All Debuggers1793888
+Node: DBX Options1796660
+Node: DBX Hooks1802098
+Node: File Names and DBX1803407
+Node: DWARF1805511
+Node: VMS Debug1811326
+Node: CTF Debug1811923
+Node: BTF Debug1812284
+Node: Floating Point1812627
+Node: Mode Switching1815382
+Node: Target Attributes1819819
+Node: Emulated TLS1829295
+Node: MIPS Coprocessors1832685
+Node: PCH Target1833844
+Node: C++ ABI1835686
+Node: D Language and ABI1840478
+Node: Named Address Spaces1843421
+Node: Misc1849348
+Ref: TARGET_SHIFT_TRUNCATION_MASK1857219
+Node: Host Config1917133
+Node: Host Common1918202
+Node: Filesystem1920576
+Node: Host Misc1924691
+Node: Fragments1927140
+Node: Target Fragment1928335
+Node: Host Fragment1939147
+Node: Collect21939387
+Node: Header Dirs1942023
+Node: Type Information1943446
+Node: GTY Options1946722
+Node: Inheritance and GTY1957981
+Ref: Inheritance and GTY-Footnote-11959546
+Node: User GC1959816
+Node: GGC Roots1963555
+Node: Files1964268
+Node: Invoking the garbage collector1966896
+Node: Troubleshooting1968401
+Node: Plugins1969476
+Node: Plugins loading1970605
+Node: Plugin API1971704
+Node: Plugins pass1979571
+Node: Plugins GC1981542
+Node: Plugins description1983259
+Node: Plugins attr1983795
+Node: Plugins recording1986075
+Node: Plugins gate1986925
+Node: Plugins tracking1987516
+Node: Plugins building1988104
+Node: LTO1991605
+Node: LTO Overview1992477
+Node: LTO object file layout1998229
+Node: IPA2002859
+Node: WHOPR2011909
+Node: Internal flags2016469
+Node: Match and Simplify2017880
+Node: GIMPLE API2018842
+Node: The Language2021637
+Node: Static Analyzer2034136
+Node: Analyzer Internals2034401
+Node: Debugging the Analyzer2050288
+Node: User Experience Guidelines2053208
+Node: Guidelines for Diagnostics2054144
+Ref: input_location_example2062319
+Node: Guidelines for Options2072004
+Node: Funding2072181
+Node: GNU Project2074688
+Node: Copying2075337
+Node: GNU Free Documentation License2112848
+Node: Contributors2137969
+Node: Option Index2178945
+Node: Concept Index2179822
 
 End Tag Table
 
